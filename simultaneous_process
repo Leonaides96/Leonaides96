@@ -1,0 +1,23 @@
+ # in this file contain the multi thread func, which allow the code run in parallel. 
+ # note: there has some pro and cons on this func
+ 
+ import time
+ from threading import Thread
+ 
+ def do_this():
+    print("Starting this")
+    time.sleep(2)
+    print("finished this")
+    
+ def do_that():
+    print("Starting that")
+    time.sleep(2)
+    print("finished that")
+    
+do_this()
+do_that()
+
+t1 = Thread(targer=do_this)
+t1.start()
+t2 = Thread(targer=do_that)
+t2.start()
